@@ -71,10 +71,31 @@ I have provided a starting point for you to construct a website for Albert the g
 
 This skeleton starts you off with a basic landing page for Albert the gator's site.
 
-Paste the following `<div>` below the `<div>` with the id of "#home"
+Create a new `<div>` with `id="about"` and `class="container"` below `<div id="home">`".  
+This is going to be the "about" section of our page. We are going to give it a header and then a couple paragraphs describing ourselves.  
+
+Throw the below code at the top of `<div id="about" class="container>`
 ```html
-<div id="about">
-  <h1>About me </h1>
-  <p>Hi my name is Albert.</p>
+<div class="page-header">
+  <h1>About me...</h1>
+</div>
+```
+This just makes a shell with nice spacing to house our title. [More info @ bootstrap docs](http://getbootstrap.com/components/#page-header).
+
+Now, outside of the `<div class="page-header">` but still in the "about" section, add a `<p>` tag and type out as much information describing yourself as you'd like.  Don't forget to close the paragraph tag like this: `</p>`
+
+Here's my code for that section: (I just have a bunch of junk [Lorem ipsum](https://en.wikipedia.org/wiki/Lorem_ipsum) text. Copy it if you'd like.)
+```html
+<div id="about" class="container">
+  <div class="page-header">
+    <h1>About me...</h1>
+  </div>
+  <p>
+    Hey my name is Albert! I'm the mascot for UF. I'm pretty cool and a 1337 programmer and stuff.
+    <br/><br/>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum dolor massa, id consequat nisl maximus at. Nunc leo tellus, ornare eget scelerisque nec, tincidunt at mi. Aliquam dapibus porttitor purus, non luctus ex interdum ullamcorper. Nullam sapien ante, laoreet non mattis non, scelerisque vel nunc. Phasellus cursus mollis varius. Sed interdum libero quis orci tincidunt viverra. In laoreet auctor ante, vel sagittis odio porttitor at. Suspendisse sit amet sem auctor felis egestas aliquet. Mauris consequat bibendum est sit amet scelerisque. Cras accumsan nisl ligula, ut faucibus odio posuere eu.
+    <br/><br/> 
+    Pellentesque sollicitudin nulla et tortor efficitur, quis sagittis lectus consequat. Suspendisse efficitur nec tellus quis suscipit. Ut hendrerit eleifend metus vitae pharetra. Fusce posuere semper nulla, et scelerisque turpis viverra a. Morbi cursus tortor at finibus bibendum. Donec maximus suscipit ipsum. Sed accumsan justo dictum tristique cursus. Nunc fringilla posuere imperdiet.    
+  </p>
 </div>
 ```
