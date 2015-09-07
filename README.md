@@ -65,3 +65,16 @@ The dot in front of “mine” means that the selector is referring to a class, 
 
 [Bootstrap](http://getbootstrap.com/) is essentially a collection of CSS styles & classes which adapts HTML elements when
 viewed on different devices. It also provides a number of helpful CSS classes, and allows you take make nice looking websites without writing too much of your own CSS.
+
+## Tutorial
+I have provided a starting point for you to construct a website for Albert the gator. To follow along, download this repo and start with the files in the folder: `starter-skeleton`
+
+This skeleton starts you off with a basic landing page for Albert the gator's site.
+
+Paste the following `<div>` below the `<div>` with the id of "#home"
+```html
+<div id="about">
+  <h1>About me </h1>
+  <p>Hi my name is Albert.</p>
+</div>
+```
