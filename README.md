@@ -32,3 +32,36 @@ opening and closing tags in a large and bold manner.
 Common HTML tags include `<h1>`, `<img>`, `<body>`, `<p>` `<a>`, and
 `<div>`. Which respectively denote a heading, an image, the body of a webpage,
 paragraph text, a link, and a sectional division.
+
+CSS is a style sheet language used to add style to HTML elements. For example if you
+simply wanted to make the header red in your website you could do so with CSS, as
+shown below. There is much more you can do with CSS, but this is just a basic example.
+
+```css
+h1 {
+ color: red;
+}
+```
+The above code would go at the very top of a CSS file. There is no "main" function or anything like that. "h1" is called a *selector* which is used to select (wow rly?) certain HTML elements that you would like to assign certain style attributes to (e.g. whatever you have within the {}'s).
+
+Now, if you had multiple `<h1>` tags on your site they would all become red. CSS
+has a solution for this. Which is using classes and ids to identify specific HTML elements.
+A class can be assigned to multiple elements, while an id can only uniquely identify one
+element.   
+
+For example:
+
+```html
+<h1 class=”mine”>Hello World</h1>
+<a class="mine" href="https://github.com/UFSEC">hiiii</a>
+```
+and in your CSS file:
+```css
+.mine {
+ color: green;
+}
+```
+The dot in front of “mine” means that the selector is referring to a class, where as “#mine” would refer to an id called "mine". Now only HTML elements with the class "mine" will become green.
+
+[Bootstrap](http://getbootstrap.com/) is essentially a collection of CSS styles & classes which adapts HTML elements when
+viewed on different devices. It also provides a number of helpful CSS classes, and allows you take make nice looking websites without writing too much of your own CSS.
