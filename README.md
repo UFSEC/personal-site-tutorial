@@ -67,12 +67,14 @@ The dot in front of “mine” means that the selector is referring to a class, 
 viewed on different devices. It also provides a number of helpful CSS classes, and allows you take make nice looking websites without writing too much of your own CSS.
 
 ## Tutorial
+####Skeleton
 I have provided a starting point for you to construct a website for Albert the gator. To follow along, download this repo and start with the files in the folder: `starter-skeleton`
 
-This skeleton starts you off with a basic landing page for Albert the gator's site.
+This skeleton starts you off with a basic landing page for Albert the gator's site with a basic bootstrap nav-bar, a centered image and `Hello, World!` text.
 
+####About
 Create a new `<div>` with `id="about"` and `class="container"` below `<div id="home">`".  
-This is going to be the "about" section of our page. We are going to give it a header and then a couple paragraphs describing ourselves.  
+This is going to be the **about** section of our page. We are going to give it a header and then a couple paragraphs describing ourselves.  
 
 Throw the below code at the top of `<div id="about" class="container>`
 ```html
@@ -82,7 +84,15 @@ Throw the below code at the top of `<div id="about" class="container>`
 ```
 This just makes a shell with nice spacing to house our title. [More info @ bootstrap docs](http://getbootstrap.com/components/#page-header).
 
-Now, outside of the `<div class="page-header">` but still in the "about" section, add a `<p>` tag and type out as much information describing yourself as you'd like.  Don't forget to close the paragraph tag like this: `</p>`
+Next, add the following CSS to your `styles.css` file to changet the font color of our text since white looks better than black on this background.
+
+```css
+h1, p {
+	color: white;
+}
+```
+
+Now, outside of the `<div class="page-header">` but still in the **about** section, add a `<p>` tag and type out as much information describing yourself as you'd like.  Don't forget to close the paragraph tag like this: `</p>`
 
 Here's my code for that section: (I just have a bunch of junk [Lorem ipsum](https://en.wikipedia.org/wiki/Lorem_ipsum) text. Copy it if you'd like.)
 ```html
@@ -97,5 +107,14 @@ Here's my code for that section: (I just have a bunch of junk [Lorem ipsum](http
     <br/><br/> 
     Pellentesque sollicitudin nulla et tortor efficitur, quis sagittis lectus consequat. Suspendisse efficitur nec tellus quis suscipit. Ut hendrerit eleifend metus vitae pharetra. Fusce posuere semper nulla, et scelerisque turpis viverra a. Morbi cursus tortor at finibus bibendum. Donec maximus suscipit ipsum. Sed accumsan justo dictum tristique cursus. Nunc fringilla posuere imperdiet.    
   </p>
+</div>
+```
+####Work Experience
+Now we are going to create a **work experience** section for Albert. Copy and paste the same container code that you have for your **about** section, but discarding your "about" text, changing the `<h1>` and giving this div an `id="work"`. It should look like this:
+```
+<div id="work" class="container">
+  <div class="page-header">
+    <h1>Work experience</h1>
+  </div>
 </div>
 ```
