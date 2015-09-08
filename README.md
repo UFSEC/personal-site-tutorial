@@ -67,8 +67,10 @@ The dot in front of “mine” means that the selector is referring to a class, 
 viewed on different devices. It also provides a number of helpful CSS classes, and allows you take make nice looking websites without writing too much of your own CSS.
 
 ## Tutorial
-####Skeleton
+####Skeleton :skull:
 I have provided a starting point for you to construct a website for Albert the gator. To follow along, download this repo and start with the files in the folder: `starter-skeleton`
+
+To download the repository, there are links on the right side of the repository's page on GitHub. You can either download as zip or clone the repository. Or click [here](https://github.com/UFSEC/personal-site-tutorial/archive/master.zip) to download the zip file too.
 
 This skeleton starts you off with a basic landing page for Albert the gator's site with a basic bootstrap nav-bar, a centered image and `Hello, World!` text.
 
@@ -227,7 +229,7 @@ function cursorAnimation() {
 ```
 This function first selects any HTML element(s) with an id of `cursor` (aka our cursor!) Then calls [jQuery's .animate()](http://api.jquery.com/animate/) function on it. Which just sets the opacity to 0 (invisible) and then brings it back to 1.  
 
-(You don't really need to understand entirely whats going on. Alot of software development is utilizing other people's code and resources to accomplish your goal. For example, I didn't write this from scratch. I got the idea from [here](http://codepen.io/stathisg/pen/Bkvhg))
+You don't really need to understand entirely whats going on here. Alot of software development is utilizing other people's code and resources to accomplish your goal. For example, I didn't write this from scratch. I got the idea from [here](http://codepen.io/stathisg/pen/Bkvhg).
 
 Now, paste the below code above your `cursorAnimation()` function in your `script.js` file.
 
@@ -241,3 +243,47 @@ This function calls [setInterval()](https://developer.mozilla.org/en-US/docs/Web
 
 The `$( document ).ready()` is a jQuery function, which is kind of like a "main method". Basically, once the page is loaded and ready to be manipulated it executes whatever code is inside of it. More info [here](https://learn.jquery.com/using-jquery-core/document-ready/).
 
+####Navbar
+
+As you may have noticed, the links in the navigation bar are incorrect and not all of them work. Lets fix that real quick.  
+
+If you go to the code for the navigation bar, (the large `<nav>` tag at the top of the `<body>`) you will find an unordered list which houses each button on the nav bar. The code should look like this right now:
+```html
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+```
+If you take a closer look at the code, you will see that each `<li>` is just an `<a>` tag with a link and some text. For example `<a href="#about">` is telling that link element to link to **the** element in the page with an id of *about*. So there was a reason we gave each section an id! :sunglasses:
+
+Let's fix/change the second `<li>` to correspond to "work" or "work experience" and add one more `<li>` for  "projects".  
+
+The code should now look like this:
+
+```html
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+```
+
+And the nav buttons should all work appropiately! :+1:
+
+####Notes
+Woo, we've built your first website! And it doesn't look half bad, eh? It also looks good on mobile! All of this with minimal effort. Thanks bootstrap. 
+
+Now, if you want to use this tutorial as a basis for your own personal website (which you probably should) you will probably want to:
+* add a *contact* section with links to your email, github, linkedin, etc
+* maybe host your resume on the website
+* customize it to your liking. We don't want everyone with an identical website :stuck_out_tongue_winking_eye:
+* Host it with [github pages](https://pages.github.com/)  
+-- GitHub offers free hosting for static websites and makes it really simple to get your site online. The link above has great step by step instructions.
+
+[Here](https://github.com/HackathonHackers/personal-sites) is a list of a ton of students around the world's personal sites. This is so you can get inspiration for design and whatnot.
+
+[Contact me](http://spuleri.com/) if you have any questions.
