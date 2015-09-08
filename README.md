@@ -84,7 +84,7 @@ Throw the below code at the top of `<div id="about" class="container>`
 ```
 This just makes a shell with nice spacing to house our title. [More info @ bootstrap docs](http://getbootstrap.com/components/#page-header).
 
-Next, add the following CSS to your `styles.css` file to changet the font color of our text since white looks better than black on this background.
+Next, add the following CSS to your `styles.css` file to change the font color of our text, since white looks better than black on this background.
 
 ```css
 h1, p {
@@ -111,10 +111,15 @@ Here's my code for that section: (I just have a bunch of junk [Lorem ipsum](http
 ```
 ####Work Experience
 Now we are going to create a **work experience** section for Albert. Copy and paste the same container code that you have for your **about** section, but discarding your "about" text, changing the `<h1>` and giving this div an `id="work"`. It should look like this:
-```
+```html
 <div id="work" class="container">
   <div class="page-header">
     <h1>Work experience</h1>
   </div>
 </div>
 ```
+
+Now, we're going to use a bootstrap [list group](http://getbootstrap.com/components/#list-group) to list our work experience. Copy & paste the code from the bootstrap's website (link above) right below your "pade-header" div to create a list of jobs.
+
+This section should look like this now:
+![screenshot](https://gyazo.com/8c18b6e6223ca57cef6a246f14a9b8a7.png)
