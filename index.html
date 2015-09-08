@@ -1,0 +1,338 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Personal-site-tutorial by UFSEC</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Personal-site-tutorial</h1>
+        <p>A tutorial that introduces web basics and how to make your very own online portfolio site</p>
+
+        <p class="view"><a href="https://github.com/UFSEC/personal-site-tutorial">View the Project on GitHub <small>UFSEC/personal-site-tutorial</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/UFSEC/personal-site-tutorial/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/UFSEC/personal-site-tutorial/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/UFSEC/personal-site-tutorial">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="personal-site-tutorial" class="anchor" href="#personal-site-tutorial" aria-hidden="true"><span class="octicon octicon-link"></span></a>personal-site-tutorial</h1>
+
+<p>A tutorial that introduces web basics and how to make your very own online portfolio.
+You will be making a responsive, static website.</p>
+
+<h2>
+<a id="intro-to-web-basics" class="anchor" href="#intro-to-web-basics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intro to web basics</h2>
+
+<h6>
+<a id="start-here-if-you-have-0-experience" class="anchor" href="#start-here-if-you-have-0-experience" aria-hidden="true"><span class="octicon octicon-link"></span></a>start here if you have 0 experience</h6>
+
+<p>This tutorial serves as a guide to create a responsive static website, one that
+does not load new content. Static websites only display text and images and are
+considered the most basic type of websites. These are coded in HTML and CSS (and JavaScript if you wanna be fancy) and show
+the same information to every user, unlike sites such as Facebook, Amazon and Twitter (or any real web application), which
+constantly update and show new/different content to each user.</p>
+
+<p>A responsive website is one that changes depending on what kind of device is accessing
+it. For example, a website should look different if a phone is accessing it, compared to a
+tablet, a laptop and a desktop. To build a responsive website, we will be using Twitter
+Bootstrap, a CSS framework created by Twitter to do this easily.</p>
+
+<h5>
+<a id="a-little-about-website-structure" class="anchor" href="#a-little-about-website-structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>A little about website structure</h5>
+
+<p>From the most basic level, websites are composed of HTML (HyperText Markup
+Language) along with CSS (Cascading Style Sheets) for styling your website. HTML is a markup
+language (not a programming language) that defines the structure of the webpage. It is
+basically the skeleton of a website. HTML uses tags to declare certain elements in a
+webpage. For instance a header element uses an “h1” tag (shown below) to tell the
+browser that a header is in between the tags. It will then render any text between the
+opening and closing tags in a large and bold manner.</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">h1</span>&gt;Hello World!&lt;/<span class="pl-ent">h1</span>&gt;</pre></div>
+
+<p>Common HTML tags include <code>&lt;h1&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;p&gt;</code> <code>&lt;a&gt;</code>, and
+<code>&lt;div&gt;</code>. Which respectively denote a heading, an image, the body of a webpage,
+paragraph text, a link, and a sectional division.</p>
+
+<p>CSS is a style sheet language used to add style to HTML elements. For example if you
+simply wanted to make the header red in your website you could do so with CSS, as
+shown below. There is much more you can do with CSS, but this is just a basic example.</p>
+
+<div class="highlight highlight-css"><pre><span class="pl-ent">h1</span> {
+ <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">red</span>;
+}</pre></div>
+
+<p>The above code would go at the very top of a CSS file. There is no "main" function or anything like that. "h1" is called a <em>selector</em> which is used to select (wow rly?) certain HTML elements that you would like to assign certain style attributes to (e.g. whatever you have within the {}'s).</p>
+
+<p>Now, if you had multiple <code>&lt;h1&gt;</code> tags on your site they would all become red. CSS
+has a solution for this. Which is using classes and ids to identify specific HTML elements.
+A class can be assigned to multiple elements, while an id can only uniquely identify one
+element.   </p>
+
+<p>For example:</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">h1</span> <span class="pl-e">class</span>=<span class="pl-s">”mine”</span>&gt;Hello World&lt;/<span class="pl-ent">h1</span>&gt;
+&lt;<span class="pl-ent">a</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>mine<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>https://github.com/UFSEC<span class="pl-pds">"</span></span>&gt;hiiii&lt;/<span class="pl-ent">a</span>&gt;</pre></div>
+
+<p>and in your CSS file:</p>
+
+<div class="highlight highlight-css"><pre><span class="pl-e">.mine</span> {
+ <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">green</span>;
+}</pre></div>
+
+<p>The dot in front of “mine” means that the selector is referring to a class, where as “#mine” would refer to an id called "mine". Now only HTML elements with the class "mine" will become green.</p>
+
+<p><a href="http://getbootstrap.com/">Bootstrap</a> is essentially a collection of CSS styles &amp; classes which adapts HTML elements when
+viewed on different devices. It also provides a number of helpful CSS classes, and allows you take make nice looking websites without writing too much of your own CSS.</p>
+
+<h2>
+<a id="tutorial" class="anchor" href="#tutorial" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tutorial</h2>
+
+<h4>
+<a id="skeleton-skull" class="anchor" href="#skeleton-skull" aria-hidden="true"><span class="octicon octicon-link"></span></a>Skeleton <img class="emoji" title=":skull:" alt=":skull:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f480.png" height="20" width="20" align="absmiddle">
+</h4>
+
+<p>I have provided a starting point for you to construct a website for Albert the gator. To follow along, download this repo and start with the files in the folder: <code>starter-skeleton</code></p>
+
+<p>To download the repository, there are links on the right side of the repository's page on GitHub. You can either download as zip or clone the repository. Or click <a href="https://github.com/UFSEC/personal-site-tutorial/archive/master.zip">here</a> to download the zip file too.</p>
+
+<p>This skeleton starts you off with a basic landing page for Albert the gator's site with a basic bootstrap nav-bar, a centered image and <code>Hello, World!</code> text.</p>
+
+<h4>
+<a id="about" class="anchor" href="#about" aria-hidden="true"><span class="octicon octicon-link"></span></a>About</h4>
+
+<p>Create a new <code>&lt;div&gt;</code> with <code>id="about"</code> and <code>class="container"</code> below <code>&lt;div id="home"&gt;</code>".<br>
+This is going to be the <strong>about</strong> section of our page. We are going to give it a header and then a couple paragraphs describing ourselves.  </p>
+
+<p>Throw the below code at the top of <code>&lt;div id="about" class="container&gt;</code></p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>page-header<span class="pl-pds">"</span></span>&gt;
+  &lt;<span class="pl-ent">h1</span>&gt;About me...&lt;/<span class="pl-ent">h1</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<p>This just makes a shell with nice spacing to house our title. <a href="http://getbootstrap.com/components/#page-header">More info @ bootstrap docs</a>.</p>
+
+<p>Next, add the following CSS to your <code>styles.css</code> file to change the font color of our text, since white looks better than black on this background.</p>
+
+<div class="highlight highlight-css"><pre><span class="pl-ent">h1</span>, <span class="pl-ent">h2</span>, <span class="pl-ent">h3</span>, <span class="pl-ent">h4</span>, <span class="pl-ent">h5</span>, <span class="pl-ent">h6</span>, <span class="pl-ent">a</span>, <span class="pl-ent">p</span> {
+    <span class="pl-c1"><span class="pl-c1">color</span></span>: <span class="pl-c1">white</span>;
+}</pre></div>
+
+<p>Now, outside of the <code>&lt;div class="page-header"&gt;</code> but still in the <strong>about</strong> section, add a <code>&lt;p&gt;</code> tag and type out as much information describing yourself as you'd like.  Don't forget to close the paragraph tag like this: <code>&lt;/p&gt;</code></p>
+
+<p>Here's my code for that section: (I just have a bunch of junk <a href="https://en.wikipedia.org/wiki/Lorem_ipsum">Lorem ipsum</a> text. Copy it if you'd like.)</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>about<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>container<span class="pl-pds">"</span></span>&gt;
+  &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>page-header<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">h1</span>&gt;About me...&lt;/<span class="pl-ent">h1</span>&gt;
+  &lt;/<span class="pl-ent">div</span>&gt;
+  &lt;<span class="pl-ent">p</span>&gt;
+    Hey my name is Albert! I'm the mascot for UF. I'm pretty cool and a 1337 programmer and stuff.
+    &lt;<span class="pl-ent">br</span>/&gt;&lt;<span class="pl-ent">br</span>/&gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum dolor massa, id consequat nisl maximus at. Nunc leo tellus, ornare eget scelerisque nec, tincidunt at mi. Aliquam dapibus porttitor purus, non luctus ex interdum ullamcorper. Nullam sapien ante, laoreet non mattis non, scelerisque vel nunc. Phasellus cursus mollis varius. Sed interdum libero quis orci tincidunt viverra. In laoreet auctor ante, vel sagittis odio porttitor at. Suspendisse sit amet sem auctor felis egestas aliquet. Mauris consequat bibendum est sit amet scelerisque. Cras accumsan nisl ligula, ut faucibus odio posuere eu.
+    &lt;<span class="pl-ent">br</span>/&gt;&lt;<span class="pl-ent">br</span>/&gt; 
+    Pellentesque sollicitudin nulla et tortor efficitur, quis sagittis lectus consequat. Suspendisse efficitur nec tellus quis suscipit. Ut hendrerit eleifend metus vitae pharetra. Fusce posuere semper nulla, et scelerisque turpis viverra a. Morbi cursus tortor at finibus bibendum. Donec maximus suscipit ipsum. Sed accumsan justo dictum tristique cursus. Nunc fringilla posuere imperdiet.    
+  &lt;/<span class="pl-ent">p</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<h4>
+<a id="work-experience" class="anchor" href="#work-experience" aria-hidden="true"><span class="octicon octicon-link"></span></a>Work Experience</h4>
+
+<p>Now we are going to create a <strong>work experience</strong> section for Albert. Copy and paste the same container code that you have for your <strong>about</strong> section, but discarding your "about" text, changing the <code>&lt;h1&gt;</code> and giving this div an <code>id="work"</code>. It should look like this:</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>work<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>container<span class="pl-pds">"</span></span>&gt;
+  &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>page-header<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">h1</span>&gt;Work experience&lt;/<span class="pl-ent">h1</span>&gt;
+  &lt;/<span class="pl-ent">div</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<p>Now, we're going to use a bootstrap <a href="http://getbootstrap.com/components/#list-group">list group</a> to list our work experience. Copy &amp; paste the code from the bootstrap's website (link above) right below your "pade-header" div to create a list of jobs.</p>
+
+<p>This section should look like this now:
+<img src="https://gyazo.com/8c18b6e6223ca57cef6a246f14a9b8a7.png" alt="screenshot"></p>
+
+<p>Lets change the text and add some jobs now. I'm going to have a total of 3 jobs. I am also gonna add some <a href="bootstrap%20badge's">http://getbootstrap.com/components/#badges</a> to denote the time spent at each job.</p>
+
+<p>Finally, the code for this section looks like this:</p>
+
+<div class="highlight highlight-html"><pre>    &lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>work<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>container<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>page-header<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">h1</span>&gt;Work experience&lt;/<span class="pl-ent">h1</span>&gt;
+      &lt;/<span class="pl-ent">div</span>&gt;
+      &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>list-group<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">li</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>list-group-item<span class="pl-pds">"</span></span>&gt;Lead developer at UF Software Engineering Club&lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>badge<span class="pl-pds">"</span></span>&gt;Present&lt;/<span class="pl-ent">span</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+        &lt;<span class="pl-ent">li</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>list-group-item<span class="pl-pds">"</span></span>&gt;UF Bookstore&lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>badge<span class="pl-pds">"</span></span>&gt;2 years&lt;/<span class="pl-ent">span</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+        &lt;<span class="pl-ent">li</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>list-group-item<span class="pl-pds">"</span></span>&gt;McDonald's Crew Member&lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>badge<span class="pl-pds">"</span></span>&gt;7 years&lt;/<span class="pl-ent">span</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+      &lt;/<span class="pl-ent">ul</span>&gt;
+    &lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<h4>
+<a id="projects" class="anchor" href="#projects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Projects</h4>
+
+<p>Since Albert is a programmer, he definitely needs a <strong>projects</strong> section to showcase his work and impress technical recruiters who come across his site.</p>
+
+<p>Again, copy and paste the same container code that you have for your <strong>about</strong> and <strong>work experience</strong> sections, but discarding the contents other than the <code>page-header</code>, changing the <code>&lt;h1&gt;</code> and giving this div an <code>id="projects"</code>. It should look like this:</p>
+
+<div class="highlight highlight-html"><pre>    &lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>projects<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>container<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>page-header<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">h1</span>&gt;Projects&lt;/<span class="pl-ent">h1</span>&gt;
+      &lt;/<span class="pl-ent">div</span>&gt;
+    &lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<p>We are going to list out 3 projects that Albert has developed. I want to have all 3 projects in one row. Each having an image and a title + description below its respective image. On a desktop view it will look like this:</p>
+
+<p><img src="https://gyazo.com/5904de1ff8b709f611d32eabf39f9921.png" alt="projects"></p>
+
+<p>On mobile, since there is normally not enough screen width to display all 3 projects side by side in a row. It would be desirable to collapse each project underneath the previous in one column. We can accomplish this easily with bootstrap's <a href="http://getbootstrap.com/css/#grid">grid layout</a>.</p>
+
+<p>Here is the code for this section implementing the grid layout and with all of the data for the projects:</p>
+
+<div class="highlight highlight-html"><pre>    &lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>projects<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>container<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>page-header<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">h1</span>&gt;Projects&lt;/<span class="pl-ent">h1</span>&gt;
+      &lt;/<span class="pl-ent">div</span>&gt;
+      <span class="pl-c">&lt;!--Bootstrap grid layout--&gt;</span>
+      &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>row<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>col-md-4<span class="pl-pds">"</span></span>&gt;
+          &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>img/gatorway.webp<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>img-responsive<span class="pl-pds">"</span></span>&gt;
+          &lt;<span class="pl-ent">h3</span>&gt;
+            &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>https://play.google.com/store/apps/details?id=com.guidebook.apps.GatorWay.android<span class="pl-ii">&amp;</span>hl=en<span class="pl-pds">"</span></span> <span class="pl-e">target</span>=<span class="pl-s"><span class="pl-pds">"</span>_blank<span class="pl-pds">"</span></span>&gt;UF GatorWay App&lt;/<span class="pl-ent">a</span>&gt;
+            &lt;/<span class="pl-ent">h3</span>&gt;
+          &lt;<span class="pl-ent">p</span>&gt;I developed the GatorWay app for both iOS and Android. "GatorWay is the official app of New Student and Family Programs in the Dean of Students Office at the University of Florida. GatorWay lets you download guides to various events including: Preview, Weeks of Welcome, and Family Weekend."&lt;/<span class="pl-ent">p</span>&gt;
+        &lt;/<span class="pl-ent">div</span>&gt;
+
+        &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>col-md-4<span class="pl-pds">"</span></span>&gt;
+          &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>img/isis.jpg<span class="pl-pds">"</span></span> <span class="pl-e">height</span>=<span class="pl-s"><span class="pl-pds">"</span>280<span class="pl-pds">"</span></span> <span class="pl-e">width</span>=<span class="pl-s"><span class="pl-pds">"</span>280<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>img-responsive img-rounded<span class="pl-pds">"</span></span>&gt;
+          &lt;<span class="pl-ent">br</span>/&gt;
+          &lt;<span class="pl-ent">h3</span>&gt;
+            &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>https://www.isis.ufl.edu/<span class="pl-pds">"</span></span> <span class="pl-e">target</span>=<span class="pl-s"><span class="pl-pds">"</span>_blank<span class="pl-pds">"</span></span>&gt;isis.ufl.edu website&lt;/<span class="pl-ent">a</span>&gt;
+          &lt;/<span class="pl-ent">h3</span>&gt;
+          &lt;<span class="pl-ent">p</span>&gt; I developed the isis website for university of florida students. This site is the online hub for students. It allows students to register for classes, view grades, transcripts, and a whole bunch more.&lt;/<span class="pl-ent">p</span>&gt;
+        &lt;/<span class="pl-ent">div</span>&gt;
+
+        &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>col-md-4<span class="pl-pds">"</span></span>&gt;
+          &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>img/transloc.webp<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>img-responsive<span class="pl-pds">"</span></span>&gt;
+          &lt;<span class="pl-ent">h3</span>&gt;
+            &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>https://play.google.com/store/apps/details?id=com.transloc.android.rider<span class="pl-ii">&amp;</span>hl=en<span class="pl-pds">"</span></span> <span class="pl-e">target</span>=<span class="pl-s"><span class="pl-pds">"</span>_blank<span class="pl-pds">"</span></span>&gt;TransLoc Rider App&lt;/<span class="pl-ent">a</span>&gt;
+          &lt;/<span class="pl-ent">h3</span>&gt;
+          &lt;<span class="pl-ent">p</span>&gt; I developed the TransLoc Rider app for Android. It allows students to track the bus system in Gainesville so they are able to get to class in time! It provides real time bus locations and ETAs. 
+          &lt;/<span class="pl-ent">p</span>&gt;      
+        &lt;/<span class="pl-ent">div</span>&gt;
+      &lt;/<span class="pl-ent">div</span>&gt;
+    &lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<p>As you see I have three <code>&lt;div class="col-md-4"&gt;</code>'s inside of a <code>&lt;div class="row"&gt;</code>.  Each row has 12 columns. The <code>&lt;div class="col-md-4"&gt;</code> creates a column of length 4 for "medium" sized devices (Desktops (≥992px). 4 x 3 = a total of 12 columns. For non-medium sized devices such as phones/tables, these <code>&lt;div class="col-md-4"&gt;</code>'s get wrapped onto a new line. For more info, checkout <a href="http://getbootstrap.com/css/#grid">bootstrap's docs</a>.</p>
+
+<p>Too see how the <strong>projects</strong> section looks on a mobile device, open the chrome developer tools.  </p>
+
+<p><code>ctrl+shift+j</code> on Windows or <code>cmd+option+j</code> on Mac. </p>
+
+<p>Click on the little <a href="http://cdn.sixrevisions.com/500-03-smartphone-icon-highlighted.png">phone icon</a> in the very top left hand corner of the developer tools window. This will bring up <a href="https://developer.chrome.com/devtools/docs/device-mode">device mode</a>. Where you can view your site on all different devices. Select an iPhone or something, then refresh the page to interact with your site.</p>
+
+<h4>
+<a id="blinking-cursor-animation" class="anchor" href="#blinking-cursor-animation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Blinking cursor animation</h4>
+
+<p>The site is practically done. But lets add a little "blinking cursor" animation. It's going to look like this:
+<img src="https://gyazo.com/5bcfff2123a0d48bc1a93cb98714cedc.gif" alt="cursor">  </p>
+
+<p>First add the below <code>&lt;span&gt;</code> element right after the "Hello, World!" text in your <code>&lt;h1&gt;</code> tag (still inside this <code>&lt;h1&gt;</code> tag though).</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">span</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>cursor<span class="pl-pds">"</span></span>&gt;|&lt;/<span class="pl-ent">span</span>&gt;</pre></div>
+
+<p>Now, we are going to use some JavaScript (and <a href="https://en.wikipedia.org/wiki/JQuery">jQuery</a>) to animate this "|" so it looks like its blinking. Open your <code>script.js</code> file and paste the following function right at the top of the file. </p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">function</span> <span class="pl-en">cursorAnimation</span>() {
+    $(<span class="pl-s"><span class="pl-pds">'</span>#cursor<span class="pl-pds">'</span></span>).animate({
+        opacity<span class="pl-k">:</span> <span class="pl-c1">0</span>
+    }, <span class="pl-s"><span class="pl-pds">'</span>fast<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>swing<span class="pl-pds">'</span></span>).animate({
+        opacity<span class="pl-k">:</span> <span class="pl-c1">1</span>
+    }, <span class="pl-s"><span class="pl-pds">'</span>fast<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>swing<span class="pl-pds">'</span></span>);
+}</pre></div>
+
+<p>This function first selects any HTML element(s) with an id of <code>cursor</code> (aka our cursor!) Then calls <a href="http://api.jquery.com/animate/">jQuery's .animate()</a> function on it. Which just sets the opacity to 0 (invisible) and then brings it back to 1.  </p>
+
+<p>You don't really need to understand entirely whats going on here. Alot of software development is utilizing other people's code and resources to accomplish your goal. For example, I didn't write this from scratch. I got the idea from <a href="http://codepen.io/stathisg/pen/Bkvhg">here</a>.</p>
+
+<p>Now, paste the below code above your <code>cursorAnimation()</code> function in your <code>script.js</code> file.</p>
+
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-c1">document</span>).ready(<span class="pl-k">function</span>() {
+    setInterval (<span class="pl-s"><span class="pl-pds">'</span>cursorAnimation()<span class="pl-pds">'</span></span>, <span class="pl-c1">800</span>);
+});</pre></div>
+
+<p>This function calls <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval">setInterval()</a>, passing in our <code>cursorAnimation()</code> function and a value of 800ms. This essentially calls <code>cursorAnimation()</code> every 800ms, giving the cursor a blinking effect!</p>
+
+<p>The <code>$( document ).ready()</code> is a jQuery function, which is kind of like a "main method". Basically, once the page is loaded and ready to be manipulated it executes whatever code is inside of it. More info <a href="https://learn.jquery.com/using-jquery-core/document-ready/">here</a>.</p>
+
+<h4>
+<a id="navbar" class="anchor" href="#navbar" aria-hidden="true"><span class="octicon octicon-link"></span></a>Navbar</h4>
+
+<p>As you may have noticed, the links in the navigation bar are incorrect and not all of them work. Lets fix that real quick.  </p>
+
+<p>If you go to the code for the navigation bar, (the large <code>&lt;nav&gt;</code> tag at the top of the <code>&lt;body&gt;</code>) you will find an unordered list which houses each button on the nav bar. The code should look like this right now:</p>
+
+<div class="highlight highlight-html"><pre>      &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nav navbar-nav<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">li</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>active<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span>&gt;Home&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+        &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#about<span class="pl-pds">"</span></span>&gt;About&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+        &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#contact<span class="pl-pds">"</span></span>&gt;Contact&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+      &lt;/<span class="pl-ent">ul</span>&gt;</pre></div>
+
+<p>If you take a closer look at the code, you will see that each <code>&lt;li&gt;</code> is just an <code>&lt;a&gt;</code> tag with a link and some text. For example <code>&lt;a href="#about"&gt;</code> is telling that link element to link to <strong>the</strong> element in the page with an id of <em>about</em>. So there was a reason we gave each section an id! <img class="emoji" title=":sunglasses:" alt=":sunglasses:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png" height="20" width="20" align="absmiddle"></p>
+
+<p>Let's fix/change the second <code>&lt;li&gt;</code> to correspond to "work" or "work experience" and add one more <code>&lt;li&gt;</code> for  "projects".  </p>
+
+<p>The code should now look like this:</p>
+
+<div class="highlight highlight-html"><pre>    &lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>navbar<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>collapse navbar-collapse<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>nav navbar-nav<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">li</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>active<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span>&gt;Home&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+        &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#about<span class="pl-pds">"</span></span>&gt;About&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+        &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#work<span class="pl-pds">"</span></span>&gt;Work&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+        &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#projects<span class="pl-pds">"</span></span>&gt;Projects&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+      &lt;/<span class="pl-ent">ul</span>&gt;
+    &lt;/<span class="pl-ent">div</span>&gt;<span class="pl-c">&lt;!--/.nav-collapse --&gt;</span></pre></div>
+
+<p>And the nav buttons should all work appropiately! <img class="emoji" title=":+1:" alt=":+1:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png" height="20" width="20" align="absmiddle"></p>
+
+<h4>
+<a id="notes" class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h4>
+
+<p>Woo, we've built your first website! And it doesn't look half bad, eh? It also looks good on mobile! All of this with minimal effort. Thanks bootstrap. </p>
+
+<p>Now, if you want to use this tutorial as a basis for your own personal website (which you probably should) you will probably want to:</p>
+
+<ul>
+<li>add a <em>contact</em> section with links to your email, github, linkedin, etc</li>
+<li>maybe host your resume on the website</li>
+<li>customize it to your liking. We don't want everyone with an identical website <img class="emoji" title=":stuck_out_tongue_winking_eye:" alt=":stuck_out_tongue_winking_eye:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f61c.png" height="20" width="20" align="absmiddle">
+</li>
+<li>Host it with <a href="https://pages.github.com/">github pages</a><br>
+-- GitHub offers free hosting for static websites and makes it really simple to get your site online. The link above has great step by step instructions.</li>
+</ul>
+
+<p><a href="https://github.com/HackathonHackers/personal-sites">Here</a> is a list of a ton of students around the world's personal sites. This is so you can get inspiration for design and whatnot.</p>
+
+<p><a href="http://spuleri.com/">Contact me</a> if you have any questions.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/UFSEC">UFSEC</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
