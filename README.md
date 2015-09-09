@@ -1,6 +1,13 @@
 # personal-site-tutorial
 A tutorial that introduces web basics and how to make your very own online portfolio.
 You will be making a responsive, static website.
+
+######See the live recording of the tutorial from the SEC@UF meeting on YouTube below:
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=PKu0G6vdkiA
+" target="_blank"><img src="http://img.youtube.com/vi/PKu0G6vdkiA/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
 ## Intro to web basics 
 ###### start here if you have 0 experience
 
